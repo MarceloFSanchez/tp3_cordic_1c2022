@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Mon Jun 27 15:31:32 2022
+[*]
+[dumpfile] "(null)"
+[savefile] "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/simulation/cordic_tb.sav"
+[timestart] 0
+[size] 1280 996
+[pos] 1337 -312
+*-27.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 223
+[signals_width] 226
+[sst_expanded] 1
+[sst_vpaned_height] 291
+@29
+cordic_tb.clk_tb
+@28
+cordic_tb.ctrl_tb
+cordic_tb.flag_tb
+@22
+cordic_tb.phi_0_tb[14:0]
+cordic_tb.phi_n_tb[14:0]
+@28
+cordic_tb.rst_tb
+@22
+cordic_tb.x_0_tb[13:0]
+cordic_tb.x_n_tb[13:0]
+cordic_tb.y_0_tb[13:0]
+cordic_tb.y_n_tb[13:0]
+[pattern_trace] 1
+[pattern_trace] 0

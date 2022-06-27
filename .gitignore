@@ -1,0 +1,8 @@
+#archivos temporales de vim
+*.swp
+
+#carpetas
+pruebas_ghdl
+sintesis
+otros
+
