@@ -23,7 +23,7 @@ architecture behavioral of atan_rom is
 		constant i : natural)      
 		return std_logic_vector is                                                
     begin
-		return std_logic_vector(to_unsigned(integer(round(atan(2**((-1)*unsigned(addr_i)))/atan(1))), DATA_W));
+		return std_logic_vector(to_unsigned(integer(round(atan(2**((-1)*unsigned(i)))/atan(1))), DATA_W));
 	end;
 
 	signal rom : rom_type(0 to 2**ADD_W-1);

@@ -5,20 +5,32 @@ use IEEE.numeric_std.all;
 
 -- declaracion de entidad
 entity acumulador_ang is
-	generic(N: integer:= 13);
+	generic(ANG_W:  natural:= 13;
+            ADDR_W: natural:= 4);
 	port(
-		phi_0: in std_logic_vector(N-1 downto 0);
-		count: in std_logic_vector(3 downto 0);
+		phi_0: in std_logic_vector(ANG_W-1 downto 0);
+		count: in std_logic_vector(ADDR_W-1 downto 0);
 		clk: in std_logic;
 		ctrl: in std_logic;		--'0' => phi_0; '1' => z_i
 		di: out std_logic;
-		phi_n: out std_logic_vector(N-1 downto 0)
+		phi_n: out std_logic_vector(ANG_W-1 downto 0)
 		);
 end;
 
 --declaracion de arquitectura
 
 architecture acumulador_ang_arq of acumulador_ang is
+
+    component atan_rom is
+	generic(
+		ADDR_W  : natural:= 10;
+		DATA_W : natural:= 9
+    );
+	port(
+		addr_i : in std_logic_vector(ADDR_W-1 downto 0);
+		data_o : out std_logic_vector(DATA_W-1 downto 0)
+    );
+    end component;
 
 	component mux is
 		generic(N :integer:= 17);
@@ -56,8 +68,8 @@ architecture acumulador_ang_arq of acumulador_ang is
 
 	--señales
 	
-	signal zn_aux, sal_rom, B1_aux: std_logic_vector(N-1 downto 0);
-	signal sal_mux, sal_reg: std_logic_vector(N-1 downto 0);
+	signal zn_aux, sal_rom, B1_aux: std_logic_vector(ANG_W-1 downto 0);
+	signal sal_mux, sal_reg: std_logic_vector(ANG_W-1 downto 0);
 	signal di_aux: std_logic;
 	
 
@@ -65,7 +77,7 @@ begin
 	
 
 	mux_up: mux
-		generic map(N => N)
+		generic map(N => ANG_W)
 		port map(
 			A_0 => phi_0,
 			A_1 => zn_aux,
@@ -74,7 +86,7 @@ begin
 	);
 	
 	reg_z: registro
-		generic map(N => N)
+		generic map(N => ANG_W)
 		port map(
 			D => sal_mux,
 			clk => clk,
@@ -85,26 +97,36 @@ begin
 	
 	
 	--aca van los valores calculados de tg^(-1){2^(-i)}
-	--------------------------------------------------------
-	sal_rom <= 	"010110100000000" when to_integer(unsigned(count)) = 0 else
-				"001101010010001" when to_integer(unsigned(count)) = 1 else
-				"000111000001001" when to_integer(unsigned(count)) = 2 else
-				"000011100100000" when to_integer(unsigned(count)) = 3 else
-				"000001110010100" when to_integer(unsigned(count)) = 4 else
-				"000000111001010" when to_integer(unsigned(count)) = 5 else
-				"000000011100101" when to_integer(unsigned(count)) = 6 else
-				"000000001110011" when to_integer(unsigned(count)) = 7 else
-				"000000000111001" when to_integer(unsigned(count)) = 8 else
-				"000000000011101" when to_integer(unsigned(count)) = 9 else
-				"000000000001110" when to_integer(unsigned(count)) = 10 else
-				"000000000000111" when to_integer(unsigned(count)) = 11 else
-				"000000000000011" when to_integer(unsigned(count)) = 12 else
-				"000000000000001";
+-------------------------------------------------------
+	atan: atan_rom
+	generic map(
+		ADDR_W => ADDR_W,
+		DATA_W => ANG_W
+    )
+	port map(
+		addr_i => count,
+		data_o => sal_rom
+    );
 
-	di_aux <= not sal_reg(N-1);		
+--	sal_rom <= 	"010110100000000" when to_integer(unsigned(count)) = 0 else
+--				"001101010010001" when to_integer(unsigned(count)) = 1 else
+--				"000111000001001" when to_integer(unsigned(count)) = 2 else
+--				"000011100100000" when to_integer(unsigned(count)) = 3 else
+--				"000001110010100" when to_integer(unsigned(count)) = 4 else
+--				"000000111001010" when to_integer(unsigned(count)) = 5 else
+--				"000000011100101" when to_integer(unsigned(count)) = 6 else
+--				"000000001110011" when to_integer(unsigned(count)) = 7 else
+--				"000000000111001" when to_integer(unsigned(count)) = 8 else
+--				"000000000011101" when to_integer(unsigned(count)) = 9 else
+--				"000000000001110" when to_integer(unsigned(count)) = 10 else
+--				"000000000000111" when to_integer(unsigned(count)) = 11 else
+--				"000000000000011" when to_integer(unsigned(count)) = 12 else
+--				"000000000000001";
+
+	di_aux <= not sal_reg(ANG_W-1);		
 				
 	sum_z: sumador
-		generic map(N => N)
+		generic map(N => ANG_W)
 		port map(
 			A => sal_reg,
 			B => sal_rom, 

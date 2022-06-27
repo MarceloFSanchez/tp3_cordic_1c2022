@@ -1,25 +1,31 @@
 v 4
-file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "testbench/cordic_tb.vhd" "2ac575a83d37180580b9cd3cee47fe3c2b30d927" "20220627153503.516":
-  entity cordic_tb at 2( 40) + 0 on 11;
-  architecture cordic_tb_arq of cordic_tb at 14( 248) + 0 on 12;
-file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/acumulador_ang.vhd" "858b9c0b626ee89eef892dbd7da8d6c76586012c" "20220627153503.516":
-  entity acumulador_ang at 2( 40) + 0 on 25;
-  architecture acumulador_ang_arq of acumulador_ang at 21( 478) + 0 on 26;
-file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/barrer_shifter.vhd" "5e227fc7dd248729aaa9e2739cf6089c6e8cc5f9" "20220627153503.516":
+file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "testbench/cordic_tb.vhd" "c555d54fbcb905fc62112d0878f5defe31bde1a7" "20220627201812.149":
+  entity cordic_tb at 2( 39) + 0 on 21;
+  architecture cordic_tb_arq of cordic_tb at 14( 244) + 0 on 22;
+file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/acumulador_ang.vhd" "0c6d5818252c7523f2c4f376c074ac19d6f7ab92" "20220627201812.149":
+  entity acumulador_ang at 2( 39) + 0 on 35;
+  architecture acumulador_ang_arq of acumulador_ang at 22( 511) + 0 on 36;
+file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/barrer_shifter.vhd" "5e227fc7dd248729aaa9e2739cf6089c6e8cc5f9" "20220627161053.153":
   entity barrer_shifter at 2( 40) + 0 on 19;
   architecture estruc of barrer_shifter at 20( 524) + 0 on 20;
-file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/contador.vhd" "a8e49bb429cbae49223283a9ed833a4539327d76" "20220627153503.516":
-  entity contador at 2( 40) + 0 on 23;
-  architecture contador_arq of contador at 19( 426) + 0 on 24;
-file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/cordic_v2.vhd" "17b46ab445e98a574c2e9b6e2c94034b25083447" "20220627153503.516":
-  entity cordic at 2( 40) + 0 on 13;
-  architecture cordic_arq of cordic at 25( 806) + 0 on 14;
-file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/mux.vhd" "4e2ae87216fe7bfd6507879cc241e84eb686d052" "20220627153503.516":
-  entity mux at 2( 40) + 0 on 15;
-  architecture mux_arq of mux at 17( 352) + 0 on 16;
-file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/registro.vhd" "785a222bad9947b10dd83e077a7ac9d5e19cb8bf" "20220627153503.516":
-  entity registro at 2( 40) + 0 on 17;
-  architecture registro_arq of registro at 16( 324) + 0 on 18;
-file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/sumador.vhd" "0c6999741a06b2372b82a27ce12f6bed459d6456" "20220627153503.516":
-  entity sumador at 15( 329) + 0 on 21;
-  architecture sum of sumador at 34( 759) + 0 on 22;
+file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/contador.vhd" "d4914bfb71ba8db59e56dfe126abf419ed7f6d35" "20220627201812.149":
+  entity contador at 2( 39) + 0 on 33;
+  architecture contador_arq of contador at 20( 456) + 0 on 34;
+file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/cordic_v2.vhd" "7812ee2941b8240e5d6f1554cf3d63f964c06b5e" "20220627201812.149":
+  entity cordic at 2( 39) + 0 on 23;
+  architecture cordic_arq of cordic at 26( 837) + 0 on 24;
+file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/mux.vhd" "4e2ae87216fe7bfd6507879cc241e84eb686d052" "20220627201812.149":
+  entity mux at 2( 40) + 0 on 25;
+  architecture mux_arq of mux at 17( 352) + 0 on 26;
+file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/registro.vhd" "785a222bad9947b10dd83e077a7ac9d5e19cb8bf" "20220627201812.149":
+  entity registro at 2( 40) + 0 on 27;
+  architecture registro_arq of registro at 16( 324) + 0 on 28;
+file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/sumador.vhd" "0c6999741a06b2372b82a27ce12f6bed459d6456" "20220627201812.149":
+  entity sumador at 15( 329) + 0 on 31;
+  architecture sum of sumador at 34( 759) + 0 on 32;
+file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/barrel_shifter.vhd" "662507ad5aee4f45c8864bf9da9a36cfc0f848e1" "20220627201812.149":
+  entity barrel_shifter at 2( 39) + 0 on 29;
+  architecture estruc of barrel_shifter at 21( 562) + 0 on 30;
+file "/home/marcelofs/Documentos/8646 - Sistemas digitales 1ercuat2022/tp3-cordic/" "src/atan_rom.vhd" "45ddd6af1f93c79a4593548ad759e010c5e81da2" "20220627201812.149":
+  entity atan_rom at 1( 0) + 0 on 37;
+  architecture behavioral of atan_rom at 18( 317) + 0 on 38;
